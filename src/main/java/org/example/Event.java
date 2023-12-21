@@ -3,24 +3,28 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Event {
+public abstract class Event {
     private String name;
-    private List<Object> attributes;
-    private Game game;
+    private List<Game> usedInGames;
 
-    public Event(String name, Game game) {
-        if (game == null) throw new IllegalArgumentException("Game object cannot be null");
+    public Event(String name) {
         this.name = name;
-        this.game = game;
-        this.attributes = new ArrayList<>();
+        this.usedInGames = new ArrayList<>();
     }
 
-    public Event(String name, Game game, List<Object> attributes) {
-        this(name, game);
-        this.attributes = attributes;
+    public String getName() {
+        return name;
     }
 
-    public void create(Game game) {
-        //Here will be adding event to the game
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Game> getUsedInGames() {
+        return usedInGames;
+    }
+
+    public void setUsedInGames(List<Game> usedInGames) {
+        this.usedInGames = usedInGames;
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Guest {
 
-    List<Game> games ;
+    List<Game> games;
 
     public Guest() {
 

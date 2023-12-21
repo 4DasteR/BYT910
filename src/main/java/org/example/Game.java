@@ -10,14 +10,14 @@ public class Game {
     private LocalDate createdAt;
     private LocalDate modifiedAt;
     private boolean shared;
-    private List<Event> consistsOfEvents;
+    private List<Entity> consistsOfEntities;
     private List<Asset> consistsOfAssets;
     private List<Guest> playingGuests;
 
     public Game(String name, Developer developer) {
         this.name = name;
         this.developer = developer;
-        this.consistsOfEvents = new ArrayList<>();
+        this.consistsOfEntities = new ArrayList<>();
         this.consistsOfAssets = new ArrayList<>();
         this.playingGuests = new ArrayList<>();
     }
@@ -90,12 +90,12 @@ public class Game {
         this.shared = shared;
     }
 
-    public List<Event> getConsistsOfEvents() {
-        return consistsOfEvents;
+    public List<Entity> getConsistsOfEntities() {
+        return consistsOfEntities;
     }
 
-    public void setConsistsOfEvents(List<Event> consistsOfEvents) {
-        this.consistsOfEvents = consistsOfEvents;
+    public void setConsistsOfEntities(List<Entity> consistsOfEntities) {
+        this.consistsOfEntities = consistsOfEntities;
     }
 
     public List<Asset> getConsistsOfAssets() {
