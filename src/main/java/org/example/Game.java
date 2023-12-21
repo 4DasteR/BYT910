@@ -5,18 +5,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
-    private long id;
     private String name;
+    private Developer developer;
     private LocalDate createdAt;
     private LocalDate modifiedAt;
     private boolean shared;
-    private List<Event> events;
-    private List<Asset> assets ;
-    private List<Guest> guests;
+    private List<Event> consistsOfEvents;
+    private List<Asset> consistsOfAssets;
+    private List<Guest> playingGuests;
 
-    public Game(String name) {
+    public Game(String name, Developer developer) {
         this.name = name;
-        this.events = new ArrayList<>();
+        this.developer = developer;
+        this.consistsOfEvents = new ArrayList<>();
+        this.consistsOfAssets = new ArrayList<>();
+        this.playingGuests = new ArrayList<>();
     }
 
     public static void create(String name, String directory){
@@ -47,20 +50,20 @@ public class Game {
 
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Developer getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(Developer developer) {
+        this.developer = developer;
     }
 
     public LocalDate getCreatedAt() {
@@ -85,5 +88,29 @@ public class Game {
 
     public void setShared(boolean shared) {
         this.shared = shared;
+    }
+
+    public List<Event> getConsistsOfEvents() {
+        return consistsOfEvents;
+    }
+
+    public void setConsistsOfEvents(List<Event> consistsOfEvents) {
+        this.consistsOfEvents = consistsOfEvents;
+    }
+
+    public List<Asset> getConsistsOfAssets() {
+        return consistsOfAssets;
+    }
+
+    public void setConsistsOfAssets(List<Asset> consistsOfAssets) {
+        this.consistsOfAssets = consistsOfAssets;
+    }
+
+    public List<Guest> getPlayingGuests() {
+        return playingGuests;
+    }
+
+    public void setPlayingGuests(List<Guest> playingGuests) {
+        this.playingGuests = playingGuests;
     }
 }
